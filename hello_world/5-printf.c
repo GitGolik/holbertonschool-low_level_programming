@@ -1,6 +1,3 @@
-#!/bin/bash
-gcc -wall
-
 #include <stdio.h>
 
 /**
@@ -10,6 +7,6 @@ gcc -wall
  */
 int main(void)
 {
-	printf(with proper grammar, but the outcome is a piece of art,\n);
+	printf("with proper grammar, but the outcome is a piece of art,\n");
 	return (0);
 }
