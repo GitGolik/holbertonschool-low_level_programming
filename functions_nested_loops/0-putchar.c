@@ -7,13 +7,4 @@
  */
 int main(void)
 {
-	int a = 0;
 
-	if (a=0)
-		printf("_putchar\n");
-	else
-	{
-	}
-	putchar('\n');
-	return 0;
-}
