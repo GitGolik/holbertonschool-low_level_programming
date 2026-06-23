@@ -3,6 +3,8 @@
 /**
  * _islower - check the code
  *
+ * @c: character
+ *
  * Return: Always 0 (Success)
  */
 int _islower(int c)
