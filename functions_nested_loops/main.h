@@ -15,4 +15,6 @@ int print_sign(int c);
 
 int _abs(int x);
 
+int print_last_digit(int x);
+
 #endif
