@@ -11,6 +11,8 @@
  *
  * @cols: character
  *
+ * @rows: character
+ *
  * Return: Always 0(Success)
  */
 int row_sum(int row, int cols)
@@ -36,7 +38,7 @@ int total_sum(int rows, int cols)
 		total += current;
 	}
 
-	return total;
+	return current;
 }
 
 /* -- DO NOT Modify the code below this line -- */
