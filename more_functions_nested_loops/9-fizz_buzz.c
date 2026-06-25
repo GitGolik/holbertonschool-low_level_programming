@@ -11,23 +11,25 @@ int main(void)
 
 	for (a = 1; a <= 100; a++)
 	{
-		if (a % 15 == 0)
+		if ((a % 15) == 0)
 		{
-			putchar("FizzBuzz");
+			printf("FizzBuzz");
 		}
-		else if (a % 3 == 0)
+		else if ((a % 3 == 0))
 		{
-			putchar("Fizz");
+			printf("Fizz");
 		}
-		else if (a % 5 == 0)
+		else if ((a % 5 == 0))
 		{
-			putchar("Buzz");
+			printf("Buzz");
 		}
 		else
 		{
-			putchar(a);
+			printf("%i",a);
 		}
+		if (a < 100)
+			printf(" ");
 	}
-	putchar('\n');
+	printf("\n");
 	return (0);
 }
