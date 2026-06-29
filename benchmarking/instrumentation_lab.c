@@ -47,56 +47,37 @@ static unsigned long reduce_checksum(void)
 int main(void)
 {
 	unsigned long checksum;
-	clock_t start;
-	clock_t end;
-	double elapsed_total;
-	double elapsed_build;
-	double elapsed_process;
-	double elapsed_reduce;
-	int result_total;
-	int result_build;
-	int result_process;
-	int result_reduce;
-	/* Students must add clock-based timing and print required lines. */
+	clock_t t_total_start, t_total_end;
+	clock_t t_build_start, t_build_end;
+	clock_t t_process_start, t_process_end;
+	clock_t t_reduce_start, t_reduce_end;
+	double total_sec, build_sec, process_sec, reduce_sec;
+	/* --- START total timer --- */
+	t_total_start = clock();
+	/* Phase 1: build */
+	t_build_start = clock();
 	build_dataset();
+	t_build_end = clock();
+	/* Phase 2: process */
+	t_process_start = clock();
 	process_dataset();
+	t_process_end = clock();
+	/* Phase 3: reduce */
+	t_reduce_start = clock();
 	checksum = reduce_checksum();
+	t_reduce_end = clock();
+	/* --- END total timer --- */
+	t_total_end = clock();
 	if (checksum == 0ul)
 		printf("impossible\n");
-	initialize_data();
-	start = clock();
-	result_total = next_value();
-	end = clock();
-	elapsed_total = (double)(end - start) / (double)CLOCKS_PER_SEC;
-
-	start = clock();
-	result_build = build_dataset();
-	end = clock();
-	elapsed_build = (double)(end - start) / (double)CLOCKS_PER_SEC;
-
-	start = clock();
-	result_process = process_dataset();
-	end = clock();
-	elapsed_process = (double)(end - start) / (double)CLOCKS_PER_SEC;
-
-	start = clock();
-	result_reduce = reduce_checksum();
-	end = clock();
-	elapsed_reduce = (double)(end - start) / (double)CLOCKS_PER_SEC;
-	printf("TOTAL algorithm result: %d\n", result_total);
-	printf("TOTAL time: %.6f second\n", elapsed_total);
-	printf("BUILD algorithms result: %d\n", result_build);
-	printf("BUILD time: %.6f second\n", elapsed_total);
-	printf("PROCESS algorithms result: %d\n", result_process);
-	printf("PROCESS time: %.6f second\n", elapsed_process);
-	printf("REDUCE algorithms result: %d\n", result_reduce);
-	printf("REDUCE time: %.6f second\n", elapsed_reduce);
-	/*
-	 * Required output (exact format, no extra lines):
-	 * TOTAL seconds: <float>
-	 * BUILD_DATA seconds: <float>
-	 * PROCESS seconds: <float>
-	 * REDUCE seconds: <float>
-	 */
+	/* Convert to seconds */
+	total_sec = (double)(t_total_end - t_total_start) / CLOCKS_PER_SEC;
+	build_sec = (double)(t_build_end - t_build_start) / CLOCKS_PER_SEC;
+	process_sec = (double)(t_process_end - t_process_start) / CLOCKS_PER_SEC;
+	reduce_sec = (double)(t_reduce_end - t_reduce_start) / CLOCKS_PER_SEC;
+	printf("TOTAL seconds: %.6f\n", total_sec);
+	printf("BUILD_DATA seconds: %.6f\n", build_sec);
+	printf("PROCESS seconds: %.6f\n", process_sec);
+	printf("REDUCE seconds: %.6f\n", reduce_sec);
 	return (0);
 }
