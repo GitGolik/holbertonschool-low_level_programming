@@ -10,7 +10,7 @@
 void print_rev(char *s)
 {
 	int a = 0;
-	
+
 	while (a >= 0)
 	{
 		if (s[a] == '\0')
