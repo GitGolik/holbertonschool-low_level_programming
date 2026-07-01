@@ -4,7 +4,7 @@
  * *string_toupper - check the code
  * Return: 0 success
  */
-void *string_toupper(char *s)
+void *string_toupper(char *)
 {
 	int a = 0;
 
