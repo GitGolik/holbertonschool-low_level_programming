@@ -6,7 +6,7 @@
  * @n: character
  * Return: no return
  */
-void reverse_array(int *a, int n);
+void reverse_array(int *a, int n)
 {
 	int start = 0;
 	int end = n - 1;
