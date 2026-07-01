@@ -2,6 +2,7 @@
 
 /**
  * *string_toupper - check the code
+ * @str: character
  * Return: 0 success
  */
 char *string_toupper(char *str)
