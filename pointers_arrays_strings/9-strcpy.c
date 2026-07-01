@@ -12,8 +12,8 @@ char *_strcpy(char *dest, char *src)
 
 	while (a >= 0)
 	{
-		*(dest+a) = *(src + a);
-		if (src + a) == '\0'
+		*(dest + a) = *(src + a);
+		if ((src + a) == '\0')
 			break;
 		a++;
 	}
