@@ -4,17 +4,15 @@
  * *string_toupper - check the code
  * Return: 0 success
  */
-void *string_toupper(char *)
+char *string_toupper(char *str)
 {
-	int count = 0;
+	int i;
 
-	while (*(s + count) != '\0')
+	for (i = 0; str[i]; i++)
 	{
-		if ((*(s + count) >= 97) && (*(s + count) <= 122))
-			*(s + count) = *(s + count) - 32;
-		count++;
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] += ('A' - 'a');
 	}
 
-	return (s);
+	return (str);
 }
-
