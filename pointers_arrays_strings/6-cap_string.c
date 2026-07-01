@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * cap_string - check the code
+ * cap_string - capitalize first character if it's lowercase
  * @str: character
  * Return: str to return
  */
@@ -10,7 +10,7 @@ char *cap_string(char *str)
 	int  i, j;
 	char sep[] = " \t\n,;.!?\"(){}";
 
-	if (str[0] >= 'a' && str[0] <= 'z') //capitalize first character if it's lowercase
+	if (str[0] >= 'a' && str[0] <= 'z')
 		str[0] -= 32;
 	for (i = 1; str[i] != '\0'; i++)
 	{
