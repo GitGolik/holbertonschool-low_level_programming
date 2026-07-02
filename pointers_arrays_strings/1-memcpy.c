@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * *_memcpy - copy the src array to a dest 
+ * *_memcpy - copy the src array to a dest
  * @dest: pointer of the destination of the src
  * @src: pointer of the source of the array to copy in dest
  * @n: number of octe to copy in from src to dest
