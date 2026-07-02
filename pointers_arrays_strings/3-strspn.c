@@ -22,7 +22,7 @@ unsigned int _strspn(char *s, char *accept)
 				break;
 			}
 		}
-		if (found==0)
+		if (found == 0)
 			return (i);
 	}
 	return (i);
