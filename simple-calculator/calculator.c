@@ -41,6 +41,15 @@ int main(void)
 			result = mynum * mynum2;
 			printf("Result: %.1f\n", result);
 		}
+		else if (choice == 4)
+		{
+			printf("Choice: 4 Divide , enter your numbers :\nA : ");
+			scanf("%f", &mynum);
+			printf("B : ");
+			scanf("%f", &mynum2);
+			result = mynum / mynum2;
+			printf("Result: %.1f\n", result);
+		}
 		if (choice > 4)
 		{
 			printf("Invalid choice\n");
