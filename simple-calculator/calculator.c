@@ -6,44 +6,14 @@
  */
 int main(void)
 {
-	int start;
-	int mynum;
-	int mynum2;
-	int sign;
-	int add;
-	int substract;
-	int multiply;
-	int divide;
+	int choice;
 
-	printf("Welcome , would you like to start the calculator with 1 ou quit with 0 ?\n");
-		scanf("%d", &start);
+	printf("Simple calculator: Choose your calcul\n 1) Add\n 2) Subtract\n 3) Multiply\n 4) Divide\n 0) quit");
+	scanf("%d", &choice);
 
-	if (start == 1)
+	while (choice != 0)
 	{
-		printf("Good , what's the calcul that you want to do :\n");
-		scanf("%d %d %d", &mynum, &sign, &mynum2);
-
-		if (sign == '+')
-		{
-			add = mynum + mynum2;
-			printf("The result is : %d", add);
-		}
-		else if (sign == '-')
-		{
-			substract = mynum - mynum2;
-			printf("The result is : %d", substract);
-		}
-		else if (sign == '/')
-		{
-			divide = mynum / mynum2;
-			printf("The result is : %d", divide);
-		}
-		else if (sign == '*')
-		{
-			multiply = mynum * mynum2;
-			printf("The result is : %d", multiply);
-		}
 	}
-	else
-		printf("Okay , good bye!!");
+	printf("Bye!");
+	return (0);
 }
