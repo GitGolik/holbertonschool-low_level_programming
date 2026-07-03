@@ -16,7 +16,7 @@ int main(void)
 	{
 		if (choice == 1)
 		{
-			printf("Choice: 1 , enter your numbers :\nA : ");
+			printf("Choice: 1 Add , enter your numbers :\nA : ");
 			scanf("%f", &mynum);
 			printf("B : ");
 			scanf("%f", &mynum2);
@@ -25,11 +25,20 @@ int main(void)
 		}
 		else if (choice == 2)
 		{
-			printf("choice: 2 , enter your numbers :\nA : ");
+			printf("Choice: 2 Subtract , enter your numbers :\nA : ");
 			scanf("%f", &mynum);
 			printf("B : ");
 			scanf("%f", &mynum2);
 			result = mynum - mynum2;
+			printf("Result: %.1f\n", result);
+		}
+		else if (choice == 3)
+		{
+			printf("Choice: 3 Multiply , enter your numbers :\nA : ");
+			scanf("%f", &mynum);
+			printf("B : ");
+			scanf("%f", &mynum2);
+			result = mynum * mynum2;
 			printf("Result: %.1f\n", result);
 		}
 		if (choice > 4)
