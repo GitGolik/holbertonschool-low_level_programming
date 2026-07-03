@@ -28,15 +28,27 @@
     or minutes.
 
     TASK 2  : the one got a big difference with the first part slow because it has one more loop:
-            ~2.9 seconds for the first part
-            ~0.000119 seconds for the second part
+         1 :Single-pass algorithm result: 25000
+            Single-pass algorithm time: 0.000179 seconds
+         2 :Single-pass algorithm result: 25000
+            Single-pass algorithm time: 0.000174 seconds
+         3 :Single-pass algorithm result: 25000
+            Single-pass algorithm time: 0.000178 seconds
 
     TASK 3  : finaly this one work almost as fast for every part of the program but still let see the difference in time response between each functions:
-            TOTAL seconds: 0.001889
+         1 :TOTAL seconds: 0.001889
             BUILD_DATA seconds: 0.000710
             PROCESS seconds: 0.000757
             REDUCE seconds: 0.000414
-
+         2 :TOTAL seconds: 0.001834
+            BUILD_DATA seconds: 0.000694
+            PROCESS seconds: 0.000737
+            REDUCE seconds: 0.000395
+         3 :TOTAL seconds: 0.001861
+            BUILD_DATA seconds: 0.000716
+            PROCESS seconds: 0.000740
+            REDUCE seconds: 0.000395 
+       
                                                         Relation between runtime and energy consumption
 
     pretty simple , the more a program takes time to be done , the more it will use in ernergy. so a good and efficient program will do what it was meant to do and create
