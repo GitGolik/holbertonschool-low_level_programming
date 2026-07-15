@@ -4,9 +4,7 @@
 
 /**
  * _putchar - like putchar
- * print_name - to print the name
  * @c: character
- * @name: name to print
  */
 
 int _putchar(char c);
