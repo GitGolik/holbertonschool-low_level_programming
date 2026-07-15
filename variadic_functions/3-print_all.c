@@ -14,7 +14,7 @@ int printed;
 
 va_start(args, format);
 sep = "";
-1 = 0;
+i = 0;
 printed = 0;
 
 while (format != NULL && format[i] != '\0')
