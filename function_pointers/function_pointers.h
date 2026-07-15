@@ -4,6 +4,8 @@
 
 /**
  * definition of function pointers that will be used
+ * _putchar - like putchar
+ * print_name - to print the name
  */
 
 int _putchar(char);
