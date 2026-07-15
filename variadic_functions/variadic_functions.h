@@ -4,7 +4,13 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-int _putchar(char c);
+typedef struct printer
+{
+	char *symbol;
+	void (*print)(va_list arg);
+
+} printer_t;
+
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
