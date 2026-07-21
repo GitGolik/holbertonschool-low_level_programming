@@ -1,8 +1,6 @@
 #ifndef LISTS_H
 #define LISTS_H
 
-#include <stddef.f>
-
 typedef struct list_s
 {
     char *str;
