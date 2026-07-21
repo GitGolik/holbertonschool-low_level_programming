@@ -18,7 +18,7 @@ return (NULL);
 
 while (str[len] != '\0')
 len++;
-    
+
 new = malloc(sizeof(list_t));
 if (new == NULL)
 return (NULL);
