@@ -4,12 +4,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+void close_fd(int fd);
+
 /**
  * main - copie le contenu d'un fichier dans un autre
  * @argc: nombre d'arguments
  * @argv: tableau d'arguments
  *
- * Return: 0 en cas de succès, codes spécifiques en cas d'erreur.
+ * Return: 0 en cas de succès.
  */
 int main(int argc, char **argv)
 {
@@ -36,7 +38,7 @@ int main(int argc, char **argv)
 	{
 		dprintf(STDERR_FILENO,
 			"Error: Can't write to %s\n", argv[2]);
-		close(fd_from);
+		close_fd(fd_from);
 		exit(99);
 	}
 
@@ -47,8 +49,8 @@ int main(int argc, char **argv)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Can't write to %s\n", argv[2]);
-			close(fd_from);
-			close(fd_to);
+			close_fd(fd_from);
+			close_fd(fd_to);
 			exit(99);
 		}
 	}
@@ -57,25 +59,27 @@ int main(int argc, char **argv)
 	{
 		dprintf(STDERR_FILENO,
 			"Error: Can't read from file %s\n", argv[1]);
-		close(fd_from);
-		close(fd_to);
+		close_fd(fd_from);
+		close_fd(fd_to);
 		exit(98);
 	}
 
-	if (close(fd_from) == -1)
-	{
-		dprintf(STDERR_FILENO,
-			"Error: Can't close fd %d\n", fd_from);
-		close(fd_to);
-		exit(100);
-	}
-
-	if (close(fd_to) == -1)
-	{
-		dprintf(STDERR_FILENO,
-			"Error: Can't close fd %d\n", fd_to);
-		exit(100);
-	}
+	close_fd(fd_from);
+	close_fd(fd_to);
 
 	return (0);
+}
+
+/**
+ * close_fd - ferme un descripteur de fichier
+ * @fd: descripteur à fermer
+ */
+void close_fd(int fd)
+{
+	if (close(fd) == -1)
+	{
+		dprintf(STDERR_FILENO,
+			"Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
 }
